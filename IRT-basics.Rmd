@@ -172,7 +172,7 @@ The curve is approximately normal-shaped.
 
 The item response function for the 2-parameter logistic IRT model is:
 $$P(X=1|\theta,a,b)=\frac{e^{a(\theta-b)}}{1+e^{a(\theta-b)}}$$
-The IRF describes the probability that an individual with latent ability level $\theta$ endorses an item ($X=1$) with two item characteristc parameters:  
+The IRF describes the probability that an individual with latent ability level $\theta$ endorses an item ($X=1$) with two item characteristic parameters:  
 1. $b$ is the *item difficulty* (same as 1PL model). Item difficulty is reflected in the position of the item characteristic curve along the x-axis (latent trait ablity).  
 2. $a$ is the *item discriminability*. Discriminability is how well an item is able to discriminate between persons with different ability levels. Item discriminability is reflected in the steepness of the slope of the item characteristic curves.  
 
@@ -309,11 +309,11 @@ Again we see an approximately normal distribution with mean approximately 0 and 
 # Compare models
 ```{r}
 # compare using anova function
-anova(fit.1pl, fit.2pl)
-anova(fit.2pl, fit.3pl)
+anova(fit.1pl, fit.2pl) # lower (=better) AIC & BIC for 1PL (vs. 2PL)
+anova(fit.2pl, fit.3pl) # lower (=better) AIC & BIC for 2PL (vs. 3PL)
 ```
 
-The model comparison suggests we go with the 2PL model (of the models fit to the data). 
+The model comparison suggests we go with the 1PL model (of the models fit to the data). 
 
 # Differential Item Functioning
 
