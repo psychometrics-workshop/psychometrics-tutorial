@@ -99,7 +99,7 @@ Note that the values of `d` from `mirt` are in fact _easiness_ values (i.e., neg
 
 ## Step 2: Plot Item Characteristic Curves 
 
-Item characteristic curves are the logistic curves which result from the fitted Rasch models (e.g., item response functions with the estimated item difficulty, `d`, parameter. 
+*Item characteristic curves (ICCs)* are the logistic curves which result from the fitted Rasch models (e.g., item response functions with the estimated item difficulty, `d`, parameter. 
 Latent trait/ability is plotted on the x-axis (higher values represent higher levels of the trait). 
 Probability of a "correct" answer ($X=1$) to an item is plotted on the y-axis. Note that in this 1PL model, all the curves have exactly the same shape, which is given by the `a` parameter in the model output. 
 ```{r}
@@ -110,8 +110,8 @@ The relative location of the item characteristic curves map to the parameter est
 
 ## Step 3: Plot Item Information Curves and Test Information Curve 
 
-Item information curves show how much "information" about the latent trait ability an item gives. 
-Mathematically, these are the 1st derivatives of the ICCs. 
+*Item information curves (IICs)* show how much "information" about the latent trait ability an item gives. 
+Mathematically, the IIC is the 1st derivatives of the ICC. 
 Item information curves peak at the difficulty value (point where the item has the highest discrimination), with less information at ability levels farther from the difficulty estimate. 
 
 ```{r}
@@ -172,7 +172,7 @@ The curve is approximately normal-shaped.
 
 The item response function for the 2-parameter logistic IRT model is:
 $$P(X=1|\theta,a,b)=\frac{e^{a(\theta-b)}}{1+e^{a(\theta-b)}}$$
-The IRF describes the probability that an individual with latent ability level $\theta$ endorses an item ($X=1$) with two item characteristc paramters:  
+The IRF describes the probability that an individual with latent ability level $\theta$ endorses an item ($X=1$) with two item characteristc parameters:  
 1. $b$ is the *item difficulty* (same as 1PL model). Item difficulty is reflected in the position of the item characteristic curve along the x-axis (latent trait ablity).  
 2. $a$ is the *item discriminability*. Discriminability is how well an item is able to discriminate between persons with different ability levels. Item discriminability is reflected in the steepness of the slope of the item characteristic curves.  
 
@@ -276,7 +276,7 @@ tracePlot(fit.3pl, facet = FALSE, legend = TRUE) + scale_color_brewer(palette = 
 ```
   
 The slopes of the ICCs look very similar to those of the 2PL model. 
-We can see that items 4 has a y-intercept greater than zero. 
+We can see that item 4 has a y-intercept greater than zero. 
 Even at very low ability levels, there is some chance of getting these items correct (via guessing).
   
 ## Step 3: Plot the item information curves for all 10 items, then the whole test
